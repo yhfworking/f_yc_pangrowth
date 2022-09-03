@@ -15,7 +15,7 @@ class NovelFullView extends StatefulWidget {
 }
 
 class _NovelFullViewState extends State<NovelFullView> {
-  final String _viewType = "com.example.flutter_pangrowth_plugin/NovelFullView";
+  final String _viewType = "com.yhfwork.f_yc_pangrowth/NovelFullView";
 
   MethodChannel? _methodChannel;
 

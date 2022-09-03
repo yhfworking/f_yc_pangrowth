@@ -15,7 +15,7 @@ class NewsTabsView extends StatefulWidget {
 }
 
 class _NewsTabsViewState extends State<NewsTabsView> {
-  final String _viewType = "com.example.flutter_pangrowth_plugin/NewsTabsView";
+  final String _viewType = "com.yhfwork.f_yc_pangrowth/NewsTabsView";
 
   MethodChannel? _channel;
 

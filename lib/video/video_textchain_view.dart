@@ -15,8 +15,7 @@ class VideoTextChainView extends StatefulWidget {
 }
 
 class _VideoTextChainViewState extends State<VideoTextChainView> {
-  final String _viewType =
-      "com.example.flutter_pangrowth_plugin/VideoTextChainView";
+  final String _viewType = "com.yhfwork.f_yc_pangrowth/VideoTextChainView";
 
   MethodChannel? _channel;
 

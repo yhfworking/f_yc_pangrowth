@@ -19,8 +19,7 @@ class VideoBubbleView extends StatefulWidget {
 }
 
 class _VideoBubbleViewState extends State<VideoBubbleView> {
-  final String _viewType =
-      "com.example.flutter_pangrowth_plugin/VideoBubbleView";
+  final String _viewType = "com.yhfwork.f_yc_pangrowth/VideoBubbleView";
 
   MethodChannel? _channel;
 

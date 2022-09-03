@@ -24,10 +24,6 @@ abstract class YcPangrowthPlatformVideo extends PlatformInterface {
     _instance = instance;
   }
 
-  Future<String?> getPlatformVersion() {
-    throw UnimplementedError('platformVersion() has not been implemented.');
-  }
-
   /// # NovelSDK注册初始化
   Future<bool> registerVideo({
     required String appName,

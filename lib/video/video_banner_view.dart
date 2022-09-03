@@ -15,8 +15,7 @@ class VideoBannerView extends StatefulWidget {
 }
 
 class _VideoBannerViewState extends State<VideoBannerView> {
-  final String _viewType =
-      "com.example.flutter_pangrowth_plugin/VideoBannerView";
+  final String _viewType = "com.yhfwork.f_yc_pangrowth/VideoBannerView";
 
   MethodChannel? _channel;
 

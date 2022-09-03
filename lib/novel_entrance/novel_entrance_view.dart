@@ -21,8 +21,7 @@ class NovelEntranceView extends StatefulWidget {
 }
 
 class _NovelEntranceViewState extends State<NovelEntranceView> {
-  final String _viewType =
-      "com.example.flutter_pangrowth_plugin/NovelEntranceView";
+  final String _viewType = "com.yhfwork.f_yc_pangrowth/NovelEntranceView";
 
   MethodChannel? _channel;
 

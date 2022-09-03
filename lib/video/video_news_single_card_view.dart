@@ -15,8 +15,7 @@ class VideoNewsSingleCardView extends StatefulWidget {
 }
 
 class _VideoSingleCardViewState extends State<VideoNewsSingleCardView> {
-  final String _viewType =
-      "com.example.flutter_pangrowth_plugin/VideoNewsSingleCardView";
+  final String _viewType = "com.yhfwork.f_yc_pangrowth/VideoNewsSingleCardView";
 
   MethodChannel? _channel;
 

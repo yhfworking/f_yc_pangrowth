@@ -15,7 +15,7 @@ class VideoCardView extends StatefulWidget {
 }
 
 class _VideoSingleCardViewState extends State<VideoCardView> {
-  final String _viewType = "com.example.flutter_pangrowth_plugin/VideoCardView";
+  final String _viewType = "com.yhfwork.f_yc_pangrowth/VideoCardView";
 
   MethodChannel? _channel;
 

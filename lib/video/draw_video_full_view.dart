@@ -16,7 +16,7 @@ class DrawVideoFullView extends StatefulWidget {
 }
 
 class _DrawVideoFullViewState extends State<DrawVideoFullView> {
-  final String _viewType = "com.example.flutter_pangrowth_plugin/DrawFullView";
+  final String _viewType = "com.yhfwork.f_yc_pangrowth/DrawFullView";
 
   MethodChannel? _methodChannel;
 

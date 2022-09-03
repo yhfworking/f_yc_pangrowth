@@ -19,13 +19,6 @@ class MethodChannelYcPangrowthVideo extends YcPangrowthPlatformVideo {
   @visibleForTesting
   final methodChannel = const MethodChannel('f_yc_pangrowth_method');
 
-  @override
-  Future<String?> getPlatformVersion() async {
-    final version =
-        await methodChannel.invokeMethod<String>('getPlatformVersion');
-    return version;
-  }
-
   /// # NovelSDK注册初始化
   @override
   Future<bool> registerVideo({

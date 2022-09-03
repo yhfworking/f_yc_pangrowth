@@ -15,7 +15,7 @@ class GridVideoView extends StatefulWidget {
 }
 
 class _GridVideoViewState extends State<GridVideoView> {
-  final String _viewType = "com.example.flutter_pangrowth_plugin/GridVideoView";
+  final String _viewType = "com.yhfwork.f_yc_pangrowth/GridVideoView";
 
   MethodChannel? _channel;
 
