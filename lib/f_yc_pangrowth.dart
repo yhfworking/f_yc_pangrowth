@@ -1,8 +1,7 @@
-
-import 'f_yc_pangrowth_platform_interface.dart';
+import 'f_yc_pangrowth_novel.dart';
+import 'f_yc_pangrowth_video.dart';
 
 class FYcPangrowth {
-  Future<String?> getPlatformVersion() {
-    return FYcPangrowthPlatform.instance.getPlatformVersion();
-  }
+  static final pangrowthVideo = YcPangrowthVideo();
+  static final pangrowthNovel = YcPangrowthNovel();
 }
