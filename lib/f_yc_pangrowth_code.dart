@@ -64,13 +64,13 @@ class YcNovelFeedSytle {
 }
 
 ///全局字号大小
-class NormalFontSize {
+class YcNormalFontSize {
   static const String normal = "normal";
   static const String large = "large";
 }
 
 ///阅读字号大小
-class ReadFontSize {
+class YcReadFontSize {
   static const String one = "one";
   static const String two = "two";
   static const String there = "there";

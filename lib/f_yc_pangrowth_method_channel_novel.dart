@@ -37,8 +37,8 @@ class MethodChannelYcPangrowthNovel extends YcPangrowthPlatformNovel {
       "debug": debug ?? false,
       "personalRecommendAd": personalRecommendAd ?? true,
       "personalRecommendContent": personalRecommendContent ?? true,
-      "normalFontType": normalFontType ?? NormalFontSize.normal,
-      "readFontType": readFontType ?? ReadFontSize.two,
+      "normalFontType": normalFontType ?? YcNormalFontSize.normal,
+      "readFontType": readFontType ?? YcReadFontSize.two,
     });
   }
 
