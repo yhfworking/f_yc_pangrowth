@@ -1,4 +1,18 @@
 #import "FYcPangrowthPlugin.h"
+#import "NovelPlugin.h"
+#import "BDNovelPublicConfig.h"
+#import "novel/novel_entrance/NovelEntranceView.h"
+#import "video/VideoPlugin.h"
+#import "video/view/DrawVideoFullView.h"
+#import "video/view/NewsTabsView.h"
+#import "video/view/NewsTabOneView.h"
+#import "video/view/GridVideoView.h"
+#import "video/view/VideoBannerView.h"
+#import "video/view/VideoTextChainView.h"
+#import "video/view/VideoBubbleView.h"
+#import "video/view/VideoSingleCardView.h"
+#import "video/view/VideoNewsSingleCardView.h"
+#import "video/view/VideoCardView.h"
 
 @implementation FYcPangrowthPlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
