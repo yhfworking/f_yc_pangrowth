@@ -16,10 +16,10 @@ A new Flutter plugin project.
   s.source_files = 'Classes/**/*'
   s.public_header_files = 'Classes/**/*.h'
   s.dependency 'Flutter'
-  s.platform = :ios, '9.0'
+  s.platform = :ios, '10.0'
   s.dependency 'MJExtension','~> 3.4.0'
-  s.dependency 'Pangrowth/media','~> 2.7.0.0'
-  s.dependency 'Pangrowth/novel','~> 2.7.0.0'
+  s.dependency 'Pangrowth/media','~> 2.9.0.0'
+  s.dependency 'Pangrowth/novel','~> 2.9.0.0'
 
   # Flutter.framework does not contain a i386 slice.
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
