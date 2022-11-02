@@ -6,11 +6,14 @@ import 'package:f_yc_pangrowth/src/video/f_yc_pangrowth_video.dart';
 
 /// 初始化
 class FYcPangrowthInitializer {
+  static FYcPangrowthNovel pangrowthNovel = FYcPangrowthNovel();
+  static FYcPangrowthVideo pangrowthVideo = FYcPangrowthVideo();
+
   static initializer(FYcConfigAllConfig allConfig,
       {int initializerType = 0, bool debug = false}) async {
     log('---FYcPangrowthInitializer----${allConfig.commonConfig.appNameEn}');
     if (initializerType == 1 || initializerType == 0) {
-      await FYcPangrowthNovel().registerNovel(
+      await pangrowthNovel.registerNovel(
           appName: allConfig.commonConfig.appNameEn,
           andoridAppId: allConfig.pangrowthConfig.andoridAppId,
           iosAppId: allConfig.pangrowthConfig.iosAppId,
@@ -21,7 +24,7 @@ class FYcPangrowthInitializer {
           debug: debug);
     }
     if (initializerType == 2 || initializerType == 0) {
-      await FYcPangrowthVideo().registerVideo(
+      await pangrowthVideo.registerVideo(
           appName: allConfig.commonConfig.appNameEn,
           andoridAppId: allConfig.pangrowthConfig.andoridAppId,
           iosAppId: allConfig.pangrowthConfig.iosAppId,
