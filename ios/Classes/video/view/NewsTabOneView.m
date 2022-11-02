@@ -51,7 +51,7 @@
         NSNumber *viewHeight = nsd[@"viewHeight"];
         _width =[viewWidth doubleValue];
         _height =[viewHeight doubleValue];
-        NSString* channelName = [NSString stringWithFormat:@"com.yhfwork.f_yc_pangrowth/NewsTabOneView_%lld", viewId];
+        NSString* channelName = [NSString stringWithFormat:@"f_yc_pangrowth_video/NewsTabOneView_%lld", viewId];
         _channel = [FlutterMethodChannel methodChannelWithName:channelName binaryMessenger:messenger];
         _container= [[UIView alloc] initWithFrame:CGRectMake(0, 0, _width, _height)];
         LCDSingleFeedViewController *vc = [[LCDSingleFeedViewController alloc] initWithConfigBuilder:^(LCDSingleFeedVCConfig * _Nonnull config) {
