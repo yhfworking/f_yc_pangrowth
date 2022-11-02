@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:f_yc_config/f_yc_config.dart';
 import 'package:f_yc_pangrowth/src/novel/f_yc_pangrowth_novel.dart';
 import 'package:f_yc_pangrowth/src/video/f_yc_pangrowth_video.dart';
@@ -6,6 +8,7 @@ import 'package:f_yc_pangrowth/src/video/f_yc_pangrowth_video.dart';
 class FYcPangrowthInitializer {
   static initializer(FYcConfigAllConfig allConfig,
       {int initializerType = 0, bool debug = false}) async {
+    log('---FYcPangrowthInitializer----${allConfig.commonConfig.appNameEn}');
     if (initializerType == 1 || initializerType == 0) {
       await FYcPangrowthNovel().registerNovel(
           appName: allConfig.commonConfig.appNameEn,
