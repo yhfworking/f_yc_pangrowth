@@ -1,25 +1,26 @@
 import 'package:flutter/widgets.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
-import 'entity/novel_entity.dart';
-import 'f_yc_pangrowth_method_channel_video.dart';
 
-abstract class YcPangrowthPlatformVideo extends PlatformInterface {
-  /// Constructs a FYcPangrowthPlatform.
-  YcPangrowthPlatformVideo() : super(token: _token);
+import '../novel/f_yc_pangrowth_novel_entity.dart';
+import 'f_yc_pangrowth_video_method_channel.dart';
+
+abstract class FYcPangrowthVideoPlatformInterface extends PlatformInterface {
+  FYcPangrowthVideoPlatformInterface() : super(token: _token);
 
   static final Object _token = Object();
 
-  static YcPangrowthPlatformVideo _instance = MethodChannelYcPangrowthVideo();
+  static FYcPangrowthVideoPlatformInterface _instance =
+      FYcPangrowthVideoMethodChannel();
 
   /// The default instance of [FYcPangrowthPlatform] to use.
   ///
   /// Defaults to [MethodChannelFYcPangrowth].
-  static YcPangrowthPlatformVideo get instance => _instance;
+  static FYcPangrowthVideoPlatformInterface get instance => _instance;
 
   /// Platform-specific implementations should set this with their own
   /// platform-specific class that extends [FYcPangrowthPlatform] when
   /// they register themselves.
-  static set instance(YcPangrowthPlatformVideo instance) {
+  static set instance(FYcPangrowthVideoPlatformInterface instance) {
     PlatformInterface.verifyToken(instance, _token);
     _instance = instance;
   }
@@ -59,7 +60,7 @@ abstract class YcPangrowthPlatformVideo extends PlatformInterface {
   }
 
   ///# 打开个人主页
-  Future<NovelEntity> openUserCenter() async {
+  Future<FYcPangrowthNovelEntity> openUserCenter() async {
     throw UnimplementedError('platformVersion() has not been implemented.');
   }
 

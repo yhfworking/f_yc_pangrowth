@@ -2,24 +2,23 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class VideoBubbleView extends StatefulWidget {
+class FYcPangrowthVideoBannerView extends StatefulWidget {
   final double viewWidth;
   final double viewHeight;
-  final String title;
 
-  const VideoBubbleView(
-      {Key? key,
-      required this.viewWidth,
-      required this.viewHeight,
-      required this.title})
+  const FYcPangrowthVideoBannerView(
+      {Key? key, required this.viewWidth, required this.viewHeight})
       : super(key: key);
 
   @override
-  _VideoBubbleViewState createState() => _VideoBubbleViewState();
+  // ignore: library_private_types_in_public_api
+  _FYcPangrowthVideoBannerViewState createState() =>
+      _FYcPangrowthVideoBannerViewState();
 }
 
-class _VideoBubbleViewState extends State<VideoBubbleView> {
-  final String _viewType = "com.yhfwork.f_yc_pangrowth/VideoBubbleView";
+class _FYcPangrowthVideoBannerViewState
+    extends State<FYcPangrowthVideoBannerView> {
+  final String _viewType = "f_yc_pangrowth_video/BannerView";
 
   MethodChannel? _channel;
 
@@ -34,7 +33,6 @@ class _VideoBubbleViewState extends State<VideoBubbleView> {
           creationParams: {
             "viewWidth": widget.viewWidth,
             "viewHeight": widget.viewHeight,
-            "title": widget.title,
           },
           onPlatformViewCreated: _registerChannel,
           creationParamsCodec: const StandardMessageCodec(),
@@ -49,7 +47,6 @@ class _VideoBubbleViewState extends State<VideoBubbleView> {
           creationParams: {
             "viewWidth": widget.viewWidth,
             "viewHeight": widget.viewHeight,
-            "title": widget.title,
           },
           onPlatformViewCreated: _registerChannel,
           creationParamsCodec: const StandardMessageCodec(),

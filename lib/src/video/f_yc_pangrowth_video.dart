@@ -1,9 +1,9 @@
 import 'package:flutter/widgets.dart';
 
-import 'entity/novel_entity.dart';
-import 'f_yc_pangrowth_platform_interface_video.dart';
+import '../novel/f_yc_pangrowth_novel_entity.dart';
+import 'f_yc_pangrowth_video_platform_interface.dart';
 
-class YcPangrowthVideo {
+class FYcPangrowthVideo {
   ///
   /// # NovelSDK注册初始化
   ///
@@ -33,7 +33,7 @@ class YcPangrowthVideo {
     String? mOldPartner,
     String? mOldUUID,
   }) async {
-    return await YcPangrowthPlatformVideo.instance.registerVideo(
+    return await FYcPangrowthVideoPlatformInterface.instance.registerVideo(
       appName: appName,
       andoridAppId: andoridAppId,
       iosAppId: iosAppId,
@@ -47,27 +47,28 @@ class YcPangrowthVideo {
 
   ///# 打开沉浸式小视频 全屏样式
   Future<bool> openDrawVideoFull() async {
-    return await YcPangrowthPlatformVideo.instance.openDrawVideoFull();
+    return await FYcPangrowthVideoPlatformInterface.instance
+        .openDrawVideoFull();
   }
 
   ///# 打开宫格小视频 全屏样式
   Future<bool> openGridVideo() async {
-    return await YcPangrowthPlatformVideo.instance.openGridVideo();
+    return await FYcPangrowthVideoPlatformInterface.instance.openGridVideo();
   }
 
   ///# 打开新闻 多列表 全屏样式
   Future<bool> openNewsTabs() async {
-    return await YcPangrowthPlatformVideo.instance.openNewsTabs();
+    return await FYcPangrowthVideoPlatformInterface.instance.openNewsTabs();
   }
 
   ///# 打开新闻 单列表 全屏样式
   Future<bool> openNewsTabOne() async {
-    return await YcPangrowthPlatformVideo.instance.openNewsTabOne();
+    return await FYcPangrowthVideoPlatformInterface.instance.openNewsTabOne();
   }
 
   ///# 打开个人主页
-  Future<NovelEntity> openUserCenter() async {
-    return await YcPangrowthPlatformVideo.instance.openUserCenter();
+  Future<FYcPangrowthNovelEntity> openUserCenter() async {
+    return await FYcPangrowthVideoPlatformInterface.instance.openUserCenter();
   }
 
   ///沉浸式小视频 view
@@ -78,7 +79,7 @@ class YcPangrowthVideo {
   ///
   Widget drawVideoFullView(
       {required double viewWidth, required double viewHeight}) {
-    return YcPangrowthPlatformVideo.instance
+    return FYcPangrowthVideoPlatformInterface.instance
         .drawVideoFullView(viewWidth: viewWidth, viewHeight: viewHeight);
   }
 
@@ -90,7 +91,7 @@ class YcPangrowthVideo {
   ///
   Widget gridVideoView(
       {required double viewWidth, required double viewHeight}) {
-    return YcPangrowthPlatformVideo.instance.gridVideoView(
+    return FYcPangrowthVideoPlatformInterface.instance.gridVideoView(
       viewWidth: viewWidth,
       viewHeight: viewHeight,
     );
@@ -103,7 +104,7 @@ class YcPangrowthVideo {
   /// [viewHeight] 高
   ///
   Widget newsTabsView({required double viewWidth, required double viewHeight}) {
-    return YcPangrowthPlatformVideo.instance.newsTabsView(
+    return FYcPangrowthVideoPlatformInterface.instance.newsTabsView(
       viewWidth: viewWidth,
       viewHeight: viewHeight,
     );
@@ -117,7 +118,7 @@ class YcPangrowthVideo {
   ///
   Widget newsTabOneView(
       {required double viewWidth, required double viewHeight}) {
-    return YcPangrowthPlatformVideo.instance.newsTabOneView(
+    return FYcPangrowthVideoPlatformInterface.instance.newsTabOneView(
       viewWidth: viewWidth,
       viewHeight: viewHeight,
     );
@@ -131,7 +132,7 @@ class YcPangrowthVideo {
   ///
   Widget videoBannerView(
       {required double viewWidth, required double viewHeight}) {
-    return YcPangrowthPlatformVideo.instance.videoBannerView(
+    return FYcPangrowthVideoPlatformInterface.instance.videoBannerView(
       viewWidth: viewWidth,
       viewHeight: viewHeight,
     );
@@ -145,7 +146,7 @@ class YcPangrowthVideo {
   ///
   Widget videoTextChainView(
       {required double viewWidth, required double viewHeight}) {
-    return YcPangrowthPlatformVideo.instance.videoTextChainView(
+    return FYcPangrowthVideoPlatformInterface.instance.videoTextChainView(
       viewWidth: viewWidth,
       viewHeight: viewHeight,
     );
@@ -162,7 +163,7 @@ class YcPangrowthVideo {
     required double viewHeight,
     required String title,
   }) {
-    return YcPangrowthPlatformVideo.instance.videoBubbleView(
+    return FYcPangrowthVideoPlatformInterface.instance.videoBubbleView(
         viewWidth: viewWidth, viewHeight: viewHeight, title: title);
   }
 
@@ -174,7 +175,7 @@ class YcPangrowthVideo {
   ///
   Widget videoSingleCardView(
       {required double viewWidth, required double viewHeight}) {
-    return YcPangrowthPlatformVideo.instance.videoSingleCardView(
+    return FYcPangrowthVideoPlatformInterface.instance.videoSingleCardView(
       viewWidth: viewWidth,
       viewHeight: viewHeight,
     );
@@ -188,7 +189,7 @@ class YcPangrowthVideo {
   ///
   Widget videoNewsSingleCardView(
       {required double viewWidth, required double viewHeight}) {
-    return YcPangrowthPlatformVideo.instance.videoNewsSingleCardView(
+    return FYcPangrowthVideoPlatformInterface.instance.videoNewsSingleCardView(
       viewWidth: viewWidth,
       viewHeight: viewHeight,
     );
@@ -202,13 +203,14 @@ class YcPangrowthVideo {
   ///
   Widget videoCardView(
       {required double viewWidth, required double viewHeight}) {
-    return YcPangrowthPlatformVideo.instance.videoCardView(
+    return FYcPangrowthVideoPlatformInterface.instance.videoCardView(
       viewWidth: viewWidth,
       viewHeight: viewHeight,
     );
   }
 
   Future<bool> getFeedNativeData() async {
-    return await YcPangrowthPlatformVideo.instance.getFeedNativeData();
+    return await FYcPangrowthVideoPlatformInterface.instance
+        .getFeedNativeData();
   }
 }

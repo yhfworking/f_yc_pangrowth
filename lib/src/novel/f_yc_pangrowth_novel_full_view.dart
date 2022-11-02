@@ -2,22 +2,29 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class VideoNewsSingleCardView extends StatefulWidget {
+class FYcPangrowthNovelFullView extends StatefulWidget {
   final double viewWidth;
   final double viewHeight;
 
-  const VideoNewsSingleCardView(
+  const FYcPangrowthNovelFullView(
       {Key? key, required this.viewWidth, required this.viewHeight})
       : super(key: key);
 
   @override
-  _VideoSingleCardViewState createState() => _VideoSingleCardViewState();
+  // ignore: library_private_types_in_public_api
+  _FYcPangrowthNovelFullViewState createState() =>
+      _FYcPangrowthNovelFullViewState();
 }
 
-class _VideoSingleCardViewState extends State<VideoNewsSingleCardView> {
-  final String _viewType = "com.yhfwork.f_yc_pangrowth/VideoNewsSingleCardView";
+class _FYcPangrowthNovelFullViewState extends State<FYcPangrowthNovelFullView> {
+  final String _viewType = "f_yc_pangrowth_novel/FullView";
 
-  MethodChannel? _channel;
+  MethodChannel? _methodChannel;
+
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -56,8 +63,8 @@ class _VideoSingleCardViewState extends State<VideoNewsSingleCardView> {
 
   //注册cannel
   void _registerChannel(int id) {
-    _channel = MethodChannel("${_viewType}_$id");
-    _channel?.setMethodCallHandler(_platformCallHandler);
+    _methodChannel = MethodChannel("${_viewType}_$id");
+    _methodChannel?.setMethodCallHandler(_platformCallHandler);
   }
 
   //监听原生view传值

@@ -2,33 +2,24 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class NovelEntranceView extends StatefulWidget {
+class FYcPangrowthVideoCardView extends StatefulWidget {
   final double viewWidth;
   final double viewHeight;
-  final String type;
-  final String style;
 
-  const NovelEntranceView(
-      {Key? key,
-      required this.viewWidth,
-      required this.viewHeight,
-      required this.type,
-      required this.style})
+  const FYcPangrowthVideoCardView(
+      {Key? key, required this.viewWidth, required this.viewHeight})
       : super(key: key);
 
   @override
-  _NovelEntranceViewState createState() => _NovelEntranceViewState();
+  // ignore: library_private_types_in_public_api
+  _FYcPangrowthVideoCardViewState createState() =>
+      _FYcPangrowthVideoCardViewState();
 }
 
-class _NovelEntranceViewState extends State<NovelEntranceView> {
-  final String _viewType = "com.yhfwork.f_yc_pangrowth/NovelEntranceView";
+class _FYcPangrowthVideoCardViewState extends State<FYcPangrowthVideoCardView> {
+  final String _viewType = "f_yc_pangrowth_video/CardView";
 
   MethodChannel? _channel;
-
-  @override
-  void initState() {
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -41,8 +32,6 @@ class _NovelEntranceViewState extends State<NovelEntranceView> {
           creationParams: {
             "viewWidth": widget.viewWidth,
             "viewHeight": widget.viewHeight,
-            "type": widget.type,
-            "style": widget.style,
           },
           onPlatformViewCreated: _registerChannel,
           creationParamsCodec: const StandardMessageCodec(),
@@ -57,8 +46,6 @@ class _NovelEntranceViewState extends State<NovelEntranceView> {
           creationParams: {
             "viewWidth": widget.viewWidth,
             "viewHeight": widget.viewHeight,
-            "type": widget.type,
-            "style": widget.style,
           },
           onPlatformViewCreated: _registerChannel,
           creationParamsCodec: const StandardMessageCodec(),

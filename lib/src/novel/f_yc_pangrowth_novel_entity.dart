@@ -1,13 +1,13 @@
 import 'dart:convert';
 
-class NovelEntity {
-  NovelEntity({
+class FYcPangrowthNovelEntity {
+  FYcPangrowthNovelEntity({
     required this.code,
     this.msg,
     this.data,
   });
 
-  factory NovelEntity.fromJson(Map<String, dynamic> jsonRes) {
+  factory FYcPangrowthNovelEntity.fromJson(Map<String, dynamic> jsonRes) {
     final List<NovelEntityData>? data =
         jsonRes['data'] is List ? <NovelEntityData>[] : null;
     if (data != null) {
@@ -17,7 +17,7 @@ class NovelEntity {
         }
       }
     }
-    return NovelEntity(
+    return FYcPangrowthNovelEntity(
       code: jsonRes['code']!,
       msg: jsonRes['msg'],
       data: data,
@@ -39,8 +39,8 @@ class NovelEntity {
         'data': data,
       };
 
-  NovelEntity copy() {
-    return NovelEntity(
+  FYcPangrowthNovelEntity copy() {
+    return FYcPangrowthNovelEntity(
       code: code,
       msg: msg,
       data: data?.map((NovelEntityData e) => e.copy()).toList(),

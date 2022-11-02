@@ -2,20 +2,27 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class GridVideoView extends StatefulWidget {
+class FYcPangrowthVideoBubbleView extends StatefulWidget {
   final double viewWidth;
   final double viewHeight;
+  final String title;
 
-  const GridVideoView(
-      {Key? key, required this.viewWidth, required this.viewHeight})
+  const FYcPangrowthVideoBubbleView(
+      {Key? key,
+      required this.viewWidth,
+      required this.viewHeight,
+      required this.title})
       : super(key: key);
 
   @override
-  _GridVideoViewState createState() => _GridVideoViewState();
+  // ignore: library_private_types_in_public_api
+  _FYcPangrowthVideoBubbleViewState createState() =>
+      _FYcPangrowthVideoBubbleViewState();
 }
 
-class _GridVideoViewState extends State<GridVideoView> {
-  final String _viewType = "com.yhfwork.f_yc_pangrowth/GridVideoView";
+class _FYcPangrowthVideoBubbleViewState
+    extends State<FYcPangrowthVideoBubbleView> {
+  final String _viewType = "f_yc_pangrowth_video/BubbleView";
 
   MethodChannel? _channel;
 
@@ -30,6 +37,7 @@ class _GridVideoViewState extends State<GridVideoView> {
           creationParams: {
             "viewWidth": widget.viewWidth,
             "viewHeight": widget.viewHeight,
+            "title": widget.title,
           },
           onPlatformViewCreated: _registerChannel,
           creationParamsCodec: const StandardMessageCodec(),
@@ -44,6 +52,7 @@ class _GridVideoViewState extends State<GridVideoView> {
           creationParams: {
             "viewWidth": widget.viewWidth,
             "viewHeight": widget.viewHeight,
+            "title": widget.title,
           },
           onPlatformViewCreated: _registerChannel,
           creationParamsCodec: const StandardMessageCodec(),

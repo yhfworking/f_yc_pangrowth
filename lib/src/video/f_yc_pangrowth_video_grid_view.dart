@@ -2,27 +2,24 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class NewsTabsView extends StatefulWidget {
+class FYcPangrowthVideoGridView extends StatefulWidget {
   final double viewWidth;
   final double viewHeight;
 
-  const NewsTabsView(
+  const FYcPangrowthVideoGridView(
       {Key? key, required this.viewWidth, required this.viewHeight})
       : super(key: key);
 
   @override
-  _NewsTabsViewState createState() => _NewsTabsViewState();
+  // ignore: library_private_types_in_public_api
+  _FYcPangrowthVideoGridViewState createState() =>
+      _FYcPangrowthVideoGridViewState();
 }
 
-class _NewsTabsViewState extends State<NewsTabsView> {
-  final String _viewType = "com.yhfwork.f_yc_pangrowth/NewsTabsView";
+class _FYcPangrowthVideoGridViewState extends State<FYcPangrowthVideoGridView> {
+  final String _viewType = "f_yc_pangrowth_video/GridView";
 
   MethodChannel? _channel;
-
-  @override
-  void initState() {
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {

@@ -1,17 +1,18 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
-import 'entity/novel_entity.dart';
-import 'f_yc_pangrowth_code.dart';
-import 'f_yc_pangrowth_platform_interface_novel.dart';
-import 'novel_entrance/novel_entrance_view.dart';
-import 'novel_full_view/novel_full_view.dart';
+import 'f_yc_pangrowth_novel_constant.dart';
+import 'f_yc_pangrowth_novel_entity.dart';
+import 'f_yc_pangrowth_novel_entrance_view.dart';
+import 'f_yc_pangrowth_novel_full_view.dart';
+import 'f_yc_pangrowth_novel_platform_interface.dart';
 
 /// An implementation of [FYcPangrowthPlatform] that uses method channels.
-class MethodChannelYcPangrowthNovel extends YcPangrowthPlatformNovel {
+class FYcPangrowthNovelMethodChannel
+    extends FYcPangrowthNovelPlatformInterface {
   /// The method channel used to interact with the native platform.
   // @visibleForTesting
-  final methodChannel = const MethodChannel('f_yc_pangrowth_method');
+  final methodChannel = const MethodChannel('f_yc_pangrowth_novel_method');
 
   @override
   Future<bool> registerNovel({
@@ -37,8 +38,9 @@ class MethodChannelYcPangrowthNovel extends YcPangrowthPlatformNovel {
       "debug": debug ?? false,
       "personalRecommendAd": personalRecommendAd ?? true,
       "personalRecommendContent": personalRecommendContent ?? true,
-      "normalFontType": normalFontType ?? YcNormalFontSize.normal,
-      "readFontType": readFontType ?? YcReadFontSize.two,
+      "normalFontType":
+          normalFontType ?? FYcPangrowthNovelNormalFontSize.normal,
+      "readFontType": readFontType ?? FYcPangrowthNovelReadFontSize.two,
     });
   }
 
@@ -48,25 +50,25 @@ class MethodChannelYcPangrowthNovel extends YcPangrowthPlatformNovel {
   }
 
   @override
-  Future<NovelEntity> getNovelHistory() async {
+  Future<FYcPangrowthNovelEntity> getNovelHistory() async {
     dynamic data = await methodChannel.invokeMethod("getNovelHistory", {
       "size": 1,
     });
-    return NovelEntity.fromJson(Map<String, dynamic>.from(data));
+    return FYcPangrowthNovelEntity.fromJson(Map<String, dynamic>.from(data));
   }
 
   @override
-  Future<NovelEntity> getNovelRecommendV1({
+  Future<FYcPangrowthNovelEntity> getNovelRecommendV1({
     required int size,
   }) async {
     dynamic data = await methodChannel.invokeMethod("getNovelRecommendV1", {
       "size": size,
     });
-    return NovelEntity.fromJson(Map<String, dynamic>.from(data));
+    return FYcPangrowthNovelEntity.fromJson(Map<String, dynamic>.from(data));
   }
 
   @override
-  Future<NovelEntity> getNovelRecommendFeed({
+  Future<FYcPangrowthNovelEntity> getNovelRecommendFeed({
     required int size,
   }) async {
     dynamic data = await methodChannel.invokeMethod("getNovelRecommendFeed", {
@@ -75,7 +77,7 @@ class MethodChannelYcPangrowthNovel extends YcPangrowthPlatformNovel {
     if (kDebugMode) {
       print("结果 =》$data");
     }
-    return NovelEntity.fromJson(Map<String, dynamic>.from(data));
+    return FYcPangrowthNovelEntity.fromJson(Map<String, dynamic>.from(data));
   }
 
   @override
@@ -117,17 +119,17 @@ class MethodChannelYcPangrowthNovel extends YcPangrowthPlatformNovel {
   }
 
   @override
-  Future<NovelEntity> searchNovelSuggestions({
+  Future<FYcPangrowthNovelEntity> searchNovelSuggestions({
     required String queryContent,
   }) async {
     dynamic data = await methodChannel.invokeMethod("searchNovelSuggestions", {
       "queryContent": queryContent,
     });
-    return NovelEntity.fromJson(Map<String, dynamic>.from(data));
+    return FYcPangrowthNovelEntity.fromJson(Map<String, dynamic>.from(data));
   }
 
   @override
-  Future<NovelEntity> searchNovelResults({
+  Future<FYcPangrowthNovelEntity> searchNovelResults({
     required String queryContent,
     required int offset,
     required int limit,
@@ -143,7 +145,7 @@ class MethodChannelYcPangrowthNovel extends YcPangrowthPlatformNovel {
     if (kDebugMode) {
       print("搜索结果$data");
     }
-    return NovelEntity.fromJson(Map<String, dynamic>.from(data));
+    return FYcPangrowthNovelEntity.fromJson(Map<String, dynamic>.from(data));
   }
 
   @override
@@ -158,7 +160,7 @@ class MethodChannelYcPangrowthNovel extends YcPangrowthPlatformNovel {
   @override
   Widget novelFullView(
       {required double viewWidth, required double viewHeight}) {
-    return NovelFullView(
+    return FYcPangrowthNovelFullView(
       viewWidth: viewWidth,
       viewHeight: viewHeight,
     );
@@ -170,7 +172,7 @@ class MethodChannelYcPangrowthNovel extends YcPangrowthPlatformNovel {
       required double viewHeight,
       required String type,
       required String style}) {
-    return NovelEntranceView(
+    return FYcPangrowthNovelEntranceView(
       viewWidth: viewWidth,
       viewHeight: viewHeight,
       type: type,

@@ -1,25 +1,26 @@
 import 'package:flutter/widgets.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
-import 'entity/novel_entity.dart';
-import 'f_yc_pangrowth_method_channel_novel.dart';
 
-abstract class YcPangrowthPlatformNovel extends PlatformInterface {
-  /// Constructs a FYcPangrowthPlatform.
-  YcPangrowthPlatformNovel() : super(token: _token);
+import 'f_yc_pangrowth_novel_entity.dart';
+import 'f_yc_pangrowth_novel_method_channel.dart';
+
+abstract class FYcPangrowthNovelPlatformInterface extends PlatformInterface {
+  FYcPangrowthNovelPlatformInterface() : super(token: _token);
 
   static final Object _token = Object();
 
-  static YcPangrowthPlatformNovel _instance = MethodChannelYcPangrowthNovel();
+  static FYcPangrowthNovelPlatformInterface _instance =
+      FYcPangrowthNovelMethodChannel();
 
   /// The default instance of [FYcPangrowthPlatform] to use.
   ///
   /// Defaults to [MethodChannelFYcPangrowth].
-  static YcPangrowthPlatformNovel get instance => _instance;
+  static FYcPangrowthNovelPlatformInterface get instance => _instance;
 
   /// Platform-specific implementations should set this with their own
   /// platform-specific class that extends [FYcPangrowthPlatform] when
   /// they register themselves.
-  static set instance(YcPangrowthPlatformNovel instance) {
+  static set instance(FYcPangrowthNovelPlatformInterface instance) {
     PlatformInterface.verifyToken(instance, _token);
     _instance = instance;
   }
@@ -50,7 +51,7 @@ abstract class YcPangrowthPlatformNovel extends PlatformInterface {
   ///
   /// [size] 单次获取数量
   ///
-  Future<NovelEntity> getNovelHistory() async {
+  Future<FYcPangrowthNovelEntity> getNovelHistory() async {
     throw UnimplementedError('method has not been implemented.');
   }
 
@@ -58,7 +59,7 @@ abstract class YcPangrowthPlatformNovel extends PlatformInterface {
   ///
   /// [size] 单次获取数量
   ///
-  Future<NovelEntity> getNovelRecommendV1({
+  Future<FYcPangrowthNovelEntity> getNovelRecommendV1({
     required int size,
   }) async {
     throw UnimplementedError('method has not been implemented.');
@@ -68,7 +69,7 @@ abstract class YcPangrowthPlatformNovel extends PlatformInterface {
   ///
   /// [size] 单次获取数量
   ///
-  Future<NovelEntity> getNovelRecommendFeed({
+  Future<FYcPangrowthNovelEntity> getNovelRecommendFeed({
     required int size,
   }) async {
     throw UnimplementedError('method has not been implemented.');
@@ -124,7 +125,7 @@ abstract class YcPangrowthPlatformNovel extends PlatformInterface {
   ///
   /// [queryContent] 搜索词
   ///
-  Future<NovelEntity> searchNovelSuggestions({
+  Future<FYcPangrowthNovelEntity> searchNovelSuggestions({
     required String queryContent,
   }) async {
     throw UnimplementedError('method has not been implemented.');
@@ -134,7 +135,7 @@ abstract class YcPangrowthPlatformNovel extends PlatformInterface {
   ///
   /// [queryContent] 搜索词
   ///
-  Future<NovelEntity> searchNovelResults({
+  Future<FYcPangrowthNovelEntity> searchNovelResults({
     required String queryContent,
     required int offset,
     required int limit,

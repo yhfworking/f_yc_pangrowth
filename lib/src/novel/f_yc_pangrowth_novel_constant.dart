@@ -1,5 +1,5 @@
 ///数据类型
-class YcNovelType {
+class FYcPangrowthNovelType {
   ///获取阅读历史，单本
   static const String history = "history";
 
@@ -11,7 +11,7 @@ class YcNovelType {
 }
 
 ///小说导流控件类型
-class YcNovelEntranceType {
+class FYcPangrowthNovelEntranceType {
   ///金刚位
   static const String icon = "icon";
 
@@ -32,45 +32,45 @@ class YcNovelEntranceType {
 }
 
 ///金刚位样式
-class YcNovelIconSytle {
+class FYcPangrowthNovelIconSytle {
   static const String circle = "circle";
   static const String rect = "rect";
 }
 
 ///FloatBall悬浮球样式
-class YcNovelFloatBallSytle {
+class FYcPangrowthNovelFloatBallSytle {
   static const String withClose = "withClose";
   static const String withoutClose = "withoutClose";
 }
 
 ///Banner样式
-class YcNovelBannerSytle {
+class FYcPangrowthNovelBannerSytle {
   static const String small = "small";
   static const String medium = "medium";
   static const String large = "large";
 }
 
 ///Window样式
-class YcNovelWindowSytle {
+class FYcPangrowthNovelWindowSytle {
   static const String color1 = "color1";
   static const String color2 = "color2";
 }
 
 ///Window样式
-class YcNovelFeedSytle {
+class FYcPangrowthNovelFeedSytle {
   static const String female = "female";
   static const String male = "male";
   static const String normal = "normal";
 }
 
 ///全局字号大小
-class YcNormalFontSize {
+class FYcPangrowthNovelNormalFontSize {
   static const String normal = "normal";
   static const String large = "large";
 }
 
 ///阅读字号大小
-class YcReadFontSize {
+class FYcPangrowthNovelReadFontSize {
   static const String one = "one";
   static const String two = "two";
   static const String there = "there";

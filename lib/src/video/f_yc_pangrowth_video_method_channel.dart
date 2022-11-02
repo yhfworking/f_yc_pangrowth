@@ -1,23 +1,24 @@
-import 'package:f_yc_pangrowth/video/news_tabs_view.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
-import 'entity/novel_entity.dart';
-import 'f_yc_pangrowth_platform_interface_video.dart';
-import 'video/draw_video_full_view.dart';
-import 'video/grid_video_view.dart';
-import 'video/news_tab_one_view.dart';
-import 'video/video_banner_view.dart';
-import 'video/video_bubble_view.dart';
-import 'video/video_card_view.dart';
-import 'video/video_news_single_card_view.dart';
-import 'video/video_single_card_view.dart';
-import 'video/video_textchain_view.dart';
+import '../novel/f_yc_pangrowth_novel_entity.dart';
+import 'f_yc_pangrowth_video_banner_view.dart';
+import 'f_yc_pangrowth_video_bubble_view.dart';
+import 'f_yc_pangrowth_video_card_view.dart';
+import 'f_yc_pangrowth_video_draw_full_view.dart';
+import 'f_yc_pangrowth_video_grid_view.dart';
+import 'f_yc_pangrowth_video_news_single_card_view.dart';
+import 'f_yc_pangrowth_video_news_tab_one_view.dart';
+import 'f_yc_pangrowth_video_news_tabs_view.dart';
+import 'f_yc_pangrowth_video_platform_interface.dart';
+import 'f_yc_pangrowth_video_single_card_view.dart';
+import 'f_yc_pangrowth_video_textchain_view.dart';
 
 /// An implementation of [FYcPangrowthPlatform] that uses method channels.
-class MethodChannelYcPangrowthVideo extends YcPangrowthPlatformVideo {
+class FYcPangrowthVideoMethodChannel
+    extends FYcPangrowthVideoPlatformInterface {
   /// The method channel used to interact with the native platform.
   // @visibleForTesting
-  final methodChannel = const MethodChannel('f_yc_pangrowth_method');
+  final methodChannel = const MethodChannel('f_yc_pangrowth_video_method');
 
   /// # NovelSDK注册初始化
   @override
@@ -68,7 +69,7 @@ class MethodChannelYcPangrowthVideo extends YcPangrowthPlatformVideo {
 
   ///# 打开个人主页
   @override
-  Future<NovelEntity> openUserCenter() async {
+  Future<FYcPangrowthNovelEntity> openUserCenter() async {
     return await methodChannel.invokeMethod("openUserCenter", null);
   }
 
@@ -81,7 +82,7 @@ class MethodChannelYcPangrowthVideo extends YcPangrowthPlatformVideo {
   @override
   Widget drawVideoFullView(
       {required double viewWidth, required double viewHeight}) {
-    return DrawVideoFullView(
+    return FYcPangrowthVideoDrawFullView(
       viewWidth: viewWidth,
       viewHeight: viewHeight,
     );
@@ -96,7 +97,7 @@ class MethodChannelYcPangrowthVideo extends YcPangrowthPlatformVideo {
   @override
   Widget gridVideoView(
       {required double viewWidth, required double viewHeight}) {
-    return GridVideoView(
+    return FYcPangrowthVideoGridView(
       viewWidth: viewWidth,
       viewHeight: viewHeight,
     );
@@ -110,7 +111,7 @@ class MethodChannelYcPangrowthVideo extends YcPangrowthPlatformVideo {
   ///
   @override
   Widget newsTabsView({required double viewWidth, required double viewHeight}) {
-    return NewsTabsView(
+    return FYcPangrowthVideoNewsTabsView(
       viewWidth: viewWidth,
       viewHeight: viewHeight,
     );
@@ -125,7 +126,7 @@ class MethodChannelYcPangrowthVideo extends YcPangrowthPlatformVideo {
   @override
   Widget newsTabOneView(
       {required double viewWidth, required double viewHeight}) {
-    return NewsTabOneView(
+    return FYcPangrowthVideoNewsTabOneView(
       viewWidth: viewWidth,
       viewHeight: viewHeight,
     );
@@ -140,7 +141,7 @@ class MethodChannelYcPangrowthVideo extends YcPangrowthPlatformVideo {
   @override
   Widget videoBannerView(
       {required double viewWidth, required double viewHeight}) {
-    return VideoBannerView(
+    return FYcPangrowthVideoBannerView(
       viewWidth: viewWidth,
       viewHeight: viewHeight,
     );
@@ -155,7 +156,7 @@ class MethodChannelYcPangrowthVideo extends YcPangrowthPlatformVideo {
   @override
   Widget videoTextChainView(
       {required double viewWidth, required double viewHeight}) {
-    return VideoTextChainView(
+    return FYcPangrowthVideoTextChainView(
       viewWidth: viewWidth,
       viewHeight: viewHeight,
     );
@@ -173,7 +174,7 @@ class MethodChannelYcPangrowthVideo extends YcPangrowthPlatformVideo {
     required double viewHeight,
     required String title,
   }) {
-    return VideoBubbleView(
+    return FYcPangrowthVideoBubbleView(
       viewWidth: viewWidth,
       viewHeight: viewHeight,
       title: title,
@@ -189,7 +190,7 @@ class MethodChannelYcPangrowthVideo extends YcPangrowthPlatformVideo {
   @override
   Widget videoSingleCardView(
       {required double viewWidth, required double viewHeight}) {
-    return VideoSingleCardView(
+    return FYcPangrowthVideoSingleCardView(
       viewWidth: viewWidth,
       viewHeight: viewHeight,
     );
@@ -204,7 +205,7 @@ class MethodChannelYcPangrowthVideo extends YcPangrowthPlatformVideo {
   @override
   Widget videoNewsSingleCardView(
       {required double viewWidth, required double viewHeight}) {
-    return VideoNewsSingleCardView(
+    return FYcPangrowthVideoNewsSingleCardView(
       viewWidth: viewWidth,
       viewHeight: viewHeight,
     );
@@ -219,7 +220,7 @@ class MethodChannelYcPangrowthVideo extends YcPangrowthPlatformVideo {
   @override
   Widget videoCardView(
       {required double viewWidth, required double viewHeight}) {
-    return VideoCardView(
+    return FYcPangrowthVideoCardView(
       viewWidth: viewWidth,
       viewHeight: viewHeight,
     );

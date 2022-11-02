@@ -2,40 +2,47 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class NewsTabOneView extends StatefulWidget {
+class FYcPangrowthVideoDrawFullView extends StatefulWidget {
   final double viewWidth;
   final double viewHeight;
 
-  const NewsTabOneView(
+  const FYcPangrowthVideoDrawFullView(
       {Key? key, required this.viewWidth, required this.viewHeight})
       : super(key: key);
 
   @override
-  _NewsTabOneViewState createState() => _NewsTabOneViewState();
+  // ignore: library_private_types_in_public_api
+  _FYcPangrowthVideoDrawFullViewState createState() =>
+      _FYcPangrowthVideoDrawFullViewState();
 }
 
-class _NewsTabOneViewState extends State<NewsTabOneView> {
-  final String _viewType = "com.yhfwork.f_yc_pangrowth/NewsTabOneView";
+class _FYcPangrowthVideoDrawFullViewState
+    extends State<FYcPangrowthVideoDrawFullView> {
+  final String _viewType = "f_yc_pangrowth_video/DrawFullView";
 
-  MethodChannel? _channel;
+  MethodChannel? _methodChannel;
+
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     if (defaultTargetPlatform == TargetPlatform.android) {
-      return Container();
-      // return SizedBox(
-      //   width: widget.viewWidth,
-      //   height: widget.viewHeight,
-      //   child: AndroidView(
-      //     viewType: _viewType,
-      //     creationParams: {
-      //       "viewWidth": widget.viewWidth,
-      //       "viewHeight": widget.viewHeight,
-      //     },
-      //     onPlatformViewCreated: _registerChannel,
-      //     creationParamsCodec: const StandardMessageCodec(),
-      //   ),
-      // );
+      return SizedBox(
+        width: widget.viewWidth,
+        height: widget.viewHeight,
+        child: AndroidView(
+          viewType: _viewType,
+          creationParams: {
+            "viewWidth": widget.viewWidth,
+            "viewHeight": widget.viewHeight,
+          },
+          onPlatformViewCreated: _registerChannel,
+          creationParamsCodec: const StandardMessageCodec(),
+        ),
+      );
     } else if (defaultTargetPlatform == TargetPlatform.iOS) {
       return SizedBox(
         width: widget.viewWidth,
@@ -57,8 +64,8 @@ class _NewsTabOneViewState extends State<NewsTabOneView> {
 
   //注册cannel
   void _registerChannel(int id) {
-    _channel = MethodChannel("${_viewType}_$id");
-    _channel?.setMethodCallHandler(_platformCallHandler);
+    _methodChannel = MethodChannel("${_viewType}_$id");
+    _methodChannel?.setMethodCallHandler(_platformCallHandler);
   }
 
   //监听原生view传值

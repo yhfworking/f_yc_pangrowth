@@ -2,22 +2,31 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class NovelFullView extends StatefulWidget {
+class FYcPangrowthNovelEntranceView extends StatefulWidget {
   final double viewWidth;
   final double viewHeight;
+  final String type;
+  final String style;
 
-  const NovelFullView(
-      {Key? key, required this.viewWidth, required this.viewHeight})
+  const FYcPangrowthNovelEntranceView(
+      {Key? key,
+      required this.viewWidth,
+      required this.viewHeight,
+      required this.type,
+      required this.style})
       : super(key: key);
 
   @override
-  _NovelFullViewState createState() => _NovelFullViewState();
+  // ignore: library_private_types_in_public_api
+  _FYcPangrowthNovelEntranceViewState createState() =>
+      _FYcPangrowthNovelEntranceViewState();
 }
 
-class _NovelFullViewState extends State<NovelFullView> {
-  final String _viewType = "com.yhfwork.f_yc_pangrowth/NovelFullView";
+class _FYcPangrowthNovelEntranceViewState
+    extends State<FYcPangrowthNovelEntranceView> {
+  final String _viewType = "f_yc_pangrowth_novel/EntranceView";
 
-  MethodChannel? _methodChannel;
+  MethodChannel? _channel;
 
   @override
   void initState() {
@@ -35,6 +44,8 @@ class _NovelFullViewState extends State<NovelFullView> {
           creationParams: {
             "viewWidth": widget.viewWidth,
             "viewHeight": widget.viewHeight,
+            "type": widget.type,
+            "style": widget.style,
           },
           onPlatformViewCreated: _registerChannel,
           creationParamsCodec: const StandardMessageCodec(),
@@ -49,6 +60,8 @@ class _NovelFullViewState extends State<NovelFullView> {
           creationParams: {
             "viewWidth": widget.viewWidth,
             "viewHeight": widget.viewHeight,
+            "type": widget.type,
+            "style": widget.style,
           },
           onPlatformViewCreated: _registerChannel,
           creationParamsCodec: const StandardMessageCodec(),
@@ -61,8 +74,8 @@ class _NovelFullViewState extends State<NovelFullView> {
 
   //注册cannel
   void _registerChannel(int id) {
-    _methodChannel = MethodChannel("${_viewType}_$id");
-    _methodChannel?.setMethodCallHandler(_platformCallHandler);
+    _channel = MethodChannel("${_viewType}_$id");
+    _channel?.setMethodCallHandler(_platformCallHandler);
   }
 
   //监听原生view传值

@@ -1,8 +1,8 @@
 import 'package:flutter/widgets.dart';
-import 'entity/novel_entity.dart';
-import 'f_yc_pangrowth_platform_interface_novel.dart';
+import 'f_yc_pangrowth_novel_entity.dart';
+import 'f_yc_pangrowth_novel_platform_interface.dart';
 
-class YcPangrowthNovel {
+class FYcPangrowthNovel {
   ///
   /// # NovelSDK注册初始化
   ///
@@ -43,7 +43,7 @@ class YcPangrowthNovel {
     String? normalFontType,
     String? readFontType,
   }) async {
-    return await YcPangrowthPlatformNovel.instance.registerNovel(
+    return await FYcPangrowthNovelPlatformInterface.instance.registerNovel(
         appName: appName,
         appVersionName: appVersionName,
         appVersionCode: appVersionCode,
@@ -59,25 +59,25 @@ class YcPangrowthNovel {
 
   ///# 打开小说页面
   Future<bool> openNovelPage() async {
-    return await YcPangrowthPlatformNovel.instance.openNovelPage();
+    return await FYcPangrowthNovelPlatformInterface.instance.openNovelPage();
   }
 
   ///# 获取阅读历史，单本
   ///
   /// [size] 单次获取数量
   ///
-  Future<NovelEntity> getNovelHistory() async {
-    return await YcPangrowthPlatformNovel.instance.getNovelHistory();
+  Future<FYcPangrowthNovelEntity> getNovelHistory() async {
+    return await FYcPangrowthNovelPlatformInterface.instance.getNovelHistory();
   }
 
   ///# 获取启动后推荐书列表，信息较少
   ///
   /// [size] 单次获取数量
   ///
-  Future<NovelEntity> getNovelRecommendV1({
+  Future<FYcPangrowthNovelEntity> getNovelRecommendV1({
     required int size,
   }) async {
-    return await YcPangrowthPlatformNovel.instance
+    return await FYcPangrowthNovelPlatformInterface.instance
         .getNovelRecommendV1(size: size);
   }
 
@@ -85,10 +85,10 @@ class YcPangrowthNovel {
   ///
   /// [size] 单次获取数量
   ///
-  Future<NovelEntity> getNovelRecommendFeed({
+  Future<FYcPangrowthNovelEntity> getNovelRecommendFeed({
     required int size,
   }) async {
-    return await YcPangrowthPlatformNovel.instance
+    return await FYcPangrowthNovelPlatformInterface.instance
         .getNovelRecommendFeed(size: size);
   }
 
@@ -102,7 +102,7 @@ class YcPangrowthNovel {
     required int type,
     required String book,
   }) async {
-    return await YcPangrowthPlatformNovel.instance
+    return await FYcPangrowthNovelPlatformInterface.instance
         .openNovelPageWithConfig(type: type, book: book);
   }
 
@@ -116,7 +116,7 @@ class YcPangrowthNovel {
     required int type,
     required String book,
   }) async {
-    return await YcPangrowthPlatformNovel.instance
+    return await FYcPangrowthNovelPlatformInterface.instance
         .reportRecentNovelShow(type: type, book: book);
   }
 
@@ -130,7 +130,7 @@ class YcPangrowthNovel {
     required int type,
     required String book,
   }) async {
-    return await YcPangrowthPlatformNovel.instance
+    return await FYcPangrowthNovelPlatformInterface.instance
         .reportRecentNovelClick(type: type, book: book);
   }
 
@@ -138,17 +138,17 @@ class YcPangrowthNovel {
   ///
   ///小说当天的阅读时长，单位为ms
   Future<int> getReadDuration() async {
-    return await YcPangrowthPlatformNovel.instance.getReadDuration();
+    return await FYcPangrowthNovelPlatformInterface.instance.getReadDuration();
   }
 
   ///# 小说搜索推荐
   ///
   /// [queryContent] 搜索词
   ///
-  Future<NovelEntity> searchNovelSuggestions({
+  Future<FYcPangrowthNovelEntity> searchNovelSuggestions({
     required String queryContent,
   }) async {
-    return await YcPangrowthPlatformNovel.instance
+    return await FYcPangrowthNovelPlatformInterface.instance
         .searchNovelSuggestions(queryContent: queryContent);
   }
 
@@ -156,12 +156,12 @@ class YcPangrowthNovel {
   ///
   /// [queryContent] 搜索词
   ///
-  Future<NovelEntity> searchNovelResults({
+  Future<FYcPangrowthNovelEntity> searchNovelResults({
     required String queryContent,
     required int offset,
     required int limit,
   }) async {
-    return await YcPangrowthPlatformNovel.instance.searchNovelResults(
+    return await FYcPangrowthNovelPlatformInterface.instance.searchNovelResults(
         queryContent: queryContent, offset: offset, limit: limit);
   }
 
@@ -172,7 +172,7 @@ class YcPangrowthNovel {
   Future<bool> openNovelPageWithUrl({
     required String url,
   }) async {
-    return await YcPangrowthPlatformNovel.instance
+    return await FYcPangrowthNovelPlatformInterface.instance
         .openNovelPageWithUrl(url: url);
   }
 
@@ -184,7 +184,7 @@ class YcPangrowthNovel {
   ///
   Widget novelFullView(
       {required double viewWidth, required double viewHeight}) {
-    return YcPangrowthPlatformNovel.instance
+    return FYcPangrowthNovelPlatformInterface.instance
         .novelFullView(viewWidth: viewWidth, viewHeight: viewHeight);
   }
 
@@ -203,7 +203,7 @@ class YcPangrowthNovel {
       required double viewHeight,
       required String type,
       required String style}) {
-    return YcPangrowthPlatformNovel.instance.novelEntranceView(
+    return FYcPangrowthNovelPlatformInterface.instance.novelEntranceView(
         viewWidth: viewWidth, viewHeight: viewHeight, type: type, style: style);
   }
 }

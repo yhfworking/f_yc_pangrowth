@@ -1,7 +1,15 @@
-import 'f_yc_pangrowth_novel.dart';
-import 'f_yc_pangrowth_video.dart';
-
-class YcPangrowth {
-  static final pangrowthNovel = YcPangrowthNovel();
-  static final pangrowthVideo = YcPangrowthVideo();
-}
+export './f_yc_pangrowth_initializer.dart';
+export './src/novel/f_yc_pangrowth_novel.dart';
+export './src/video/f_yc_pangrowth_video.dart';
+export './src/novel/f_yc_pangrowth_novel_entrance_view.dart';
+export './src/novel/f_yc_pangrowth_novel_full_view.dart';
+export './src/video/f_yc_pangrowth_video_banner_view.dart';
+export './src/video/f_yc_pangrowth_video_bubble_view.dart';
+export './src/video/f_yc_pangrowth_video_card_view.dart';
+export './src/video/f_yc_pangrowth_video_draw_full_view.dart';
+export './src/video/f_yc_pangrowth_video_grid_view.dart';
+export './src/video/f_yc_pangrowth_video_news_single_card_view.dart';
+export './src/video/f_yc_pangrowth_video_news_tab_one_view.dart';
+export './src/video/f_yc_pangrowth_video_news_tabs_view.dart';
+export './src/video/f_yc_pangrowth_video_single_card_view.dart';
+export './src/video/f_yc_pangrowth_video_textchain_view.dart';

@@ -2,20 +2,23 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class VideoBannerView extends StatefulWidget {
+class FYcPangrowthVideoSingleCardView extends StatefulWidget {
   final double viewWidth;
   final double viewHeight;
 
-  const VideoBannerView(
+  const FYcPangrowthVideoSingleCardView(
       {Key? key, required this.viewWidth, required this.viewHeight})
       : super(key: key);
 
   @override
-  _VideoBannerViewState createState() => _VideoBannerViewState();
+  // ignore: library_private_types_in_public_api
+  _FYcPangrowthVideoSingleCardViewState createState() =>
+      _FYcPangrowthVideoSingleCardViewState();
 }
 
-class _VideoBannerViewState extends State<VideoBannerView> {
-  final String _viewType = "com.yhfwork.f_yc_pangrowth/VideoBannerView";
+class _FYcPangrowthVideoSingleCardViewState
+    extends State<FYcPangrowthVideoSingleCardView> {
+  final String _viewType = "f_yc_pangrowth_video/SingleCardView";
 
   MethodChannel? _channel;
 

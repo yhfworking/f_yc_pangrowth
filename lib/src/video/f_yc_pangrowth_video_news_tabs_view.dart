@@ -2,22 +2,30 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class VideoTextChainView extends StatefulWidget {
+class FYcPangrowthVideoNewsTabsView extends StatefulWidget {
   final double viewWidth;
   final double viewHeight;
 
-  const VideoTextChainView(
+  const FYcPangrowthVideoNewsTabsView(
       {Key? key, required this.viewWidth, required this.viewHeight})
       : super(key: key);
 
   @override
-  _VideoTextChainViewState createState() => _VideoTextChainViewState();
+  // ignore: library_private_types_in_public_api
+  _FYcPangrowthVideoNewsTabsViewState createState() =>
+      _FYcPangrowthVideoNewsTabsViewState();
 }
 
-class _VideoTextChainViewState extends State<VideoTextChainView> {
-  final String _viewType = "com.yhfwork.f_yc_pangrowth/VideoTextChainView";
+class _FYcPangrowthVideoNewsTabsViewState
+    extends State<FYcPangrowthVideoNewsTabsView> {
+  final String _viewType = "f_yc_pangrowth_video/NewsTabsView";
 
   MethodChannel? _channel;
+
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
