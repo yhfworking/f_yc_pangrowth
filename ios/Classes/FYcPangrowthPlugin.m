@@ -2,6 +2,7 @@
 #import "NovelPlugin.h"
 #import "BDNovelPublicConfig.h"
 #import "novel/novel_entrance/NovelEntranceView.h"
+#import "novel/novel_full_view/NovelFullView.h"
 #import "video/VideoPlugin.h"
 #import "video/view/DrawVideoFullView.h"
 #import "video/view/NewsTabsView.h"
