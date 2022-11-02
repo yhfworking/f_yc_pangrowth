@@ -22,9 +22,9 @@
   FYcPangrowthPlugin* instance = [[FYcPangrowthPlugin alloc] init];
   [registrar addMethodCallDelegate:instance channel:channel];
   //注册小说入口控件
-    [registrar registerViewFactory:[[NovelEntranceViewFactory alloc] initWithMessenger:registrar.messenger] withId:@"f_yc_pangrowth_novel/NovelEntranceView"];
+    [registrar registerViewFactory:[[NovelEntranceViewFactory alloc] initWithMessenger:registrar.messenger] withId:@"f_yc_pangrowth_novel/EntranceView"];
     //沉浸式小视频view
-    [registrar registerViewFactory:[[DrawVideoFullViewFactory alloc] initWithMessenger:registrar.messenger] withId:@"f_yc_pangrowth_video/DrawFullView"];
+    [registrar registerViewFactory:[[DrawVideoFullViewFactory alloc] initWithMessenger:registrar.messenger] withId:@"f_yc_pangrowth_video/FullView"];
     //宫格小视频view
     [registrar registerViewFactory:[[GridVideoViewFactory alloc] initWithMessenger:registrar.messenger] withId:@"f_yc_pangrowth_video/GridVideoView"];
     //新闻多列表view
@@ -32,17 +32,17 @@
     //新闻单列表view
     [registrar registerViewFactory:[[NewsTabOneViewFactory alloc] initWithMessenger:registrar.messenger] withId:@"f_yc_pangrowth_video/NewsTabOneView"];
     //视频组件-banner
-    [registrar registerViewFactory:[[VideoBannerViewFactory alloc] initWithMessenger:registrar.messenger] withId:@"f_yc_pangrowth_video/VideoBannerView"];
+    [registrar registerViewFactory:[[VideoBannerViewFactory alloc] initWithMessenger:registrar.messenger] withId:@"f_yc_pangrowth_video/BannerView"];
     //视频组件-文字链
-    [registrar registerViewFactory:[[VideoTextChainViewFactory alloc] initWithMessenger:registrar.messenger] withId:@"f_yc_pangrowth_video/VideoTextChainView"];
+    [registrar registerViewFactory:[[VideoTextChainViewFactory alloc] initWithMessenger:registrar.messenger] withId:@"f_yc_pangrowth_video/TextChainView"];
     //视频组件-气泡
-    [registrar registerViewFactory:[[VideoBubbleViewFactory alloc] initWithMessenger:registrar.messenger] withId:@"f_yc_pangrowth_video/VideoBubbleView"];
+    [registrar registerViewFactory:[[VideoBubbleViewFactory alloc] initWithMessenger:registrar.messenger] withId:@"f_yc_pangrowth_video/BubbleView"];
     //视频 单卡片视频
-    [registrar registerViewFactory:[[VideoSingleCardViewFactory alloc] initWithMessenger:registrar.messenger] withId:@"f_yc_pangrowth_video/VideoSingleCardView"];
+    [registrar registerViewFactory:[[VideoSingleCardViewFactory alloc] initWithMessenger:registrar.messenger] withId:@"f_yc_pangrowth_video/SingleCardView"];
     //视频 单卡片新闻
-    [registrar registerViewFactory:[[VideoNewsSingleCardViewFactory alloc] initWithMessenger:registrar.messenger] withId:@"f_yc_pangrowth_video/VideoNewsSingleCardView"];
+    [registrar registerViewFactory:[[VideoNewsSingleCardViewFactory alloc] initWithMessenger:registrar.messenger] withId:@"f_yc_pangrowth_video/NewsSingleCardView"];
     //视频 卡片
-    [registrar registerViewFactory:[[VideoCardViewFactory alloc] initWithMessenger:registrar.messenger] withId:@"f_yc_pangrowth_video/VideoCardView"];
+    [registrar registerViewFactory:[[VideoCardViewFactory alloc] initWithMessenger:registrar.messenger] withId:@"f_yc_pangrowth_video/CardView"];
     
 }
 
