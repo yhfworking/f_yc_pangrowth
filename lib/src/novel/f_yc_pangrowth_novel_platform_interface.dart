@@ -1,6 +1,5 @@
 import 'package:flutter/widgets.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
-
 import 'f_yc_pangrowth_novel_entity.dart';
 import 'f_yc_pangrowth_novel_method_channel.dart';
 

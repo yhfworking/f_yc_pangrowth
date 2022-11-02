@@ -12,7 +12,7 @@ class FYcPangrowthNovelMethodChannel
     extends FYcPangrowthNovelPlatformInterface {
   /// The method channel used to interact with the native platform.
   // @visibleForTesting
-  final methodChannel = const MethodChannel('f_yc_pangrowth_novel_method');
+  final methodChannel = const MethodChannel('f_yc_pangrowth_method');
 
   @override
   Future<bool> registerNovel({

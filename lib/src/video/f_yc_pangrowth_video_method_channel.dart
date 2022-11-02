@@ -18,7 +18,7 @@ class FYcPangrowthVideoMethodChannel
     extends FYcPangrowthVideoPlatformInterface {
   /// The method channel used to interact with the native platform.
   // @visibleForTesting
-  final methodChannel = const MethodChannel('f_yc_pangrowth_video_method');
+  final methodChannel = const MethodChannel('f_yc_pangrowth_method');
 
   /// # NovelSDK注册初始化
   @override
