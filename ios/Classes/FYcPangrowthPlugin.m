@@ -21,6 +21,8 @@
             binaryMessenger:[registrar messenger]];
   FYcPangrowthPlugin* instance = [[FYcPangrowthPlugin alloc] init];
   [registrar addMethodCallDelegate:instance channel:channel];
+   //注册首页控件
+  [registrar registerViewFactory:[[NovelFullViewFactory alloc] initWithMessenger:registrar.messenger] withId:@"f_yc_pangrowth_novel/FullView"];
   //注册小说入口控件
     [registrar registerViewFactory:[[NovelEntranceViewFactory alloc] initWithMessenger:registrar.messenger] withId:@"f_yc_pangrowth_novel/EntranceView"];
     //沉浸式小视频view
