@@ -6,17 +6,16 @@ import 'package:f_yc_pangrowth/src/video/f_yc_pangrowth_video.dart';
 
 /// 初始化
 class FYcPangrowthInitializer {
-  static FYcPangrowthNovel pangrowthNovel = FYcPangrowthNovel();
-  static FYcPangrowthVideo pangrowthVideo = FYcPangrowthVideo();
-
-  static initializer(FYcConfigAllConfig allConfig,
-      {int initializerType = 0, bool debug = false}) async {
-    log('---FYcPangrowthInitializer----${allConfig.commonConfig.appNameEn}');
+  static initializer({int initializerType = 0, bool debug = false}) async {
+    FYcConfigPangrowthConfig pangrowthConfig = FYcConfigConfigurator.instance
+        .getConfig(configId: KIT_CONFIG_ID)
+        .pangrowthConfig;
+    log('---FYcPangrowthInitializer----${pangrowthConfig.commonConfig.appNameEn}');
     if (initializerType == 1 || initializerType == 0) {
-      await pangrowthNovel.registerNovel(
-          appName: allConfig.commonConfig.appNameEn,
-          andoridAppId: allConfig.pangrowthConfig.andoridAppId,
-          iosAppId: allConfig.pangrowthConfig.iosAppId,
+      await FYcPangrowthNovel().registerNovel(
+          appName: pangrowthConfig.commonConfig.appNameEn,
+          andoridAppId: pangrowthConfig.andoridAppId,
+          iosAppId: pangrowthConfig.iosAppId,
           appVersionName: '1.2.2',
           appVersionCode: 100,
           personalRecommendAd: true,
@@ -24,12 +23,12 @@ class FYcPangrowthInitializer {
           debug: debug);
     }
     if (initializerType == 2 || initializerType == 0) {
-      await pangrowthVideo.registerVideo(
-          appName: allConfig.commonConfig.appNameEn,
-          andoridAppId: allConfig.pangrowthConfig.andoridAppId,
-          iosAppId: allConfig.pangrowthConfig.iosAppId,
-          mPartner: allConfig.pangrowthConfig.mPartner,
-          mSecureKey: allConfig.pangrowthConfig.mSecureKey,
+      await FYcPangrowthVideo().registerVideo(
+          appName: pangrowthConfig.commonConfig.appNameEn,
+          andoridAppId: pangrowthConfig.andoridAppId,
+          iosAppId: pangrowthConfig.iosAppId,
+          mPartner: pangrowthConfig.mPartner,
+          mSecureKey: pangrowthConfig.mSecureKey,
           debug: debug);
     }
   }
