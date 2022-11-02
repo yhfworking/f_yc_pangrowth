@@ -1,5 +1,7 @@
 import 'package:f_yc_pangrowth/src/novel/f_yc_pangrowth_novel.dart';
 import 'package:f_yc_pangrowth/src/video/f_yc_pangrowth_video.dart';
+import 'package:f_yc_config/f_yc_config.dart';
+export './f_yc_pangrowth.dart';
 export './src/novel/f_yc_pangrowth_novel.dart';
 export './src/video/f_yc_pangrowth_video.dart';
 export './src/novel/f_yc_pangrowth_novel_entrance_view.dart';
@@ -14,7 +16,6 @@ export './src/video/f_yc_pangrowth_video_news_tab_one_view.dart';
 export './src/video/f_yc_pangrowth_video_news_tabs_view.dart';
 export './src/video/f_yc_pangrowth_video_single_card_view.dart';
 export './src/video/f_yc_pangrowth_video_textchain_view.dart';
-import 'package:f_yc_config/f_yc_config.dart';
 
 /// 初始化
 class FYcPangrowth {
