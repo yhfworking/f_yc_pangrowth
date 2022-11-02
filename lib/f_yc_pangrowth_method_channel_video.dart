@@ -16,7 +16,7 @@ import 'video/video_textchain_view.dart';
 /// An implementation of [FYcPangrowthPlatform] that uses method channels.
 class MethodChannelYcPangrowthVideo extends YcPangrowthPlatformVideo {
   /// The method channel used to interact with the native platform.
-  @visibleForTesting
+  // @visibleForTesting
   final methodChannel = const MethodChannel('f_yc_pangrowth_method');
 
   /// # NovelSDK注册初始化

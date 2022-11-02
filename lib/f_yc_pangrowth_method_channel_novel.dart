@@ -10,7 +10,7 @@ import 'novel_full_view/novel_full_view.dart';
 /// An implementation of [FYcPangrowthPlatform] that uses method channels.
 class MethodChannelYcPangrowthNovel extends YcPangrowthPlatformNovel {
   /// The method channel used to interact with the native platform.
-  @visibleForTesting
+  // @visibleForTesting
   final methodChannel = const MethodChannel('f_yc_pangrowth_method');
 
   @override
